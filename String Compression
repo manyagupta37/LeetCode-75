@@ -1,0 +1,32 @@
+class Solution {
+    public int compress(char[] chars) {
+        
+        int[]freq=new int[26];
+        StringBuilder sb=new StringBuilder();
+        for(int i=0;i<chars.length;i++)
+        {
+            if(chars[i]>='a' && chars[i]<='z')
+            {
+            freq[chars[i]-'a']++;
+            }
+            
+        }
+        for(int i=0;i<chars.length;i++)
+        {
+            if(freq[chars[i]-'a']>0)
+            {
+                sb.append(chars[i]);
+                sb.append(freq[chars[i]-'a']);
+                freq[chars[i]-'a']=0;
+            }
+        }
+
+      
+
+        for(int i=0;i<sb.length();i++){
+            chars[i]=sb.charAt(i);
+        }
+      
+        return sb.length();
+    }
+}
