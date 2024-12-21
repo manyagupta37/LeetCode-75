@@ -1,0 +1,36 @@
+class Solution {
+    public String reverseVowels(String s) {
+        char[]input=s.toCharArray();
+        
+        int i=0;
+        int j=input.length-1;
+        while(i<=j)
+        {
+            if((input[i]=='a' || input[i]=='e' || input[i]=='i' || input[i]=='o' || input[i]=='u' || input[i]=='A' || input[i]=='E' || input[i]=='I' || input[i]=='O' || input[i]=='U') && (input[j]=='a' || input[j]=='e' || input[j]=='i' || input[j]=='o' || input[j]=='u' || input[j]=='A' || input[j]=='E' || input[j]=='I' || input[j]=='O' || input[j]=='U'))
+            {
+                char temp=input[i];
+                input[i]=input[j];
+                input[j]=temp;
+                i++;
+                j--;
+            }
+            else if((input[i]!='a' || input[i]!='e' || input[i]!='i' || input[i]!='o' || input[i]!='u' || input[i]!='A' || input[i]!='E' || input[i]!='I' || input[i]!='O' || input[i]!='U') && (input[j]=='a' || input[j]=='e' || input[j]=='i' || input[j]=='o' || input[j]=='u' || input[j]=='A' || input[j]=='E' || input[j]=='I' || input[j]=='O' || input[j]=='U'))
+            {
+                i++;
+                
+            }
+            else if((input[i]=='a' || input[i]=='e' || input[i]=='i' || input[i]=='o' || input[i]=='u' || input[i]=='A' || input[i]=='E' || input[i]=='I' || input[i]=='O' || input[i]=='U') && (input[j]!='a' || input[j]!='e' || input[j]!='i' || input[j]!='o' || input[j]!='u' || input[j]!='A' || input[j]!='E' || input[j]!='I' || input[j]!='O' || input[j]!='U'))
+            {
+                j--;
+                
+            }
+            else
+            {
+                i++;
+                j--;
+            }
+
+        }
+        return new String(input);
+    }
+}
